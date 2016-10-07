@@ -35,3 +35,9 @@ mkdir /home/testuser/.ssh;
 cp /root/.ssh/authorized_keys /home/testuser/.ssh/authorized_keys;
 chown -Rf testuser.testuser /home/testuser;
 
+# Build LiveCD
+wget https://github.com/ch1x0r/LinuxRespin/blob/master/debian/new-Sept2016/respin-deb_1.0.0-2_all~sggua.deb?raw=true -O /tmp/respin-deb_1.0.0-2_all~sggua.deb;
+dpkg -i /tmp/respin-deb_1.0.0-2_all~sggua.deb;
+apt-get -yf install;
+respin dist;
+
