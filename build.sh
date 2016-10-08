@@ -37,7 +37,14 @@ chown -Rf testuser.testuser /home/testuser;
 
 # Build LiveCD
 wget https://github.com/ch1x0r/LinuxRespin/blob/master/debian/new-Sept2016/respin-deb_1.0.0-2_all~sggua.deb?raw=true -O /tmp/respin-deb_1.0.0-2_all~sggua.deb;
+cp -f /etc/respin.conf /etc/respin.conf.default;
 dpkg -i /tmp/respin-deb_1.0.0-2_all~sggua.deb;
 apt-get -yf install;
+cp -f /etc/respin.conf.default /etc/respin.conf;
 respin dist;
 
+
+# Share LiveCD ISO
+apt-get install apache2;
+mv /home/respin/respin/custom-live.iso /var/www/html/.;
+echo "<a href='/custom-live.iso'><h1>DOWNLOAD ISO</h1></a>" > /var/www/html/index.html;
