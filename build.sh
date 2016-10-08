@@ -10,7 +10,7 @@ apt-get install x2go-keyring;
 
 # Install Debian packages
 apt-get update;
-apt-get -y install x2goserver x2goserver-xsession openbox tint2 nitrogen ruby ruby-sinatra ruby-gtk2 volumeicon-alsa pcmanfm lxterminal git lightdm;
+apt-get -y install x2goserver x2goserver-xsession openbox tint2 nitrogen ruby ruby-sinatra ruby-gtk2 volumeicon-alsa pcmanfm lxterminal git lightdm gtk-theme-switch gtk2-engines-oxygen gtk3-engines-oxygen chromium leafpad openbox-menu;
 
 # Install extras
 cd /tmp;
@@ -40,6 +40,7 @@ cp -Rf /etc/skel /home/testuser;
 mkdir /home/testuser/.ssh;
 cp /root/.ssh/authorized_keys /home/testuser/.ssh/authorized_keys;
 chown -Rf testuser.testuser /home/testuser;
+adduser testuser sudo;
 
 # Build LiveCD
 wget https://github.com/ch1x0r/LinuxRespin/blob/master/debian/new-Sept2016/respin-deb_1.0.0-2_all~sggua.deb?raw=true -O /tmp/respin-deb_1.0.0-2_all~sggua.deb;
