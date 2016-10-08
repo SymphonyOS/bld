@@ -10,7 +10,7 @@ apt-get install x2go-keyring;
 
 # Install Debian packages
 apt-get update;
-apt-get -y install x2goserver x2goserver-xsession openbox tint2 nitrogen ruby ruby-sinatra ruby-gtk2 volumeicon-alsa pcmanfm lxterminal git lightdm gtk-theme-switch gtk2-engines-oxygen gtk3-engines-oxygen chromium leafpad openbox-menu gksu;
+apt-get -y install x2goserver x2goserver-xsession openbox tint2 nitrogen ruby ruby-sinatra ruby-gtk2 libappindicator1 libdbusmenu-glib4 libdbusmenu-gtk4 libindicator7 libnotify-bin volumeicon-alsa pcmanfm lxappearance lxterminal git lightdm gtk-theme-switch gtk2-engines-oxygen gtk3-engines-oxygen chromium leafpad openbox-menu gksu;
 
 # Install extras
 cd /tmp;
@@ -19,6 +19,9 @@ gem install webkit-gtk;
 gem install gtk-webkit-ruby;
 gem install parseconfig;
 
+wget http://ftp.us.debian.org/debian/pool/main/y/yad/yad_0.37.0-1_amd64.deb -O /tmp/yad.deb;
+dpkg -i /tmp/yad.deb;
+
 # Grab Symphony Sources
 git clone https://github.com/SymphonyOS/symphonyos.git;
 git clone https://github.com/SymphonyOS/skel.git;
@@ -26,8 +29,15 @@ git clone https://github.com/SymphonyOS/skel.git;
 # Install Icons
 dpkg -i /tmp/symphonyos/build/paper-icon-theme_1.3_all.deb;
 
+# Install Apps
+wget https://atom.io/download/deb -O /tmp/atom.deb;
+dpkg -i /tmp/atom.deb;
+Install hyper
+wget https://github.com/zeit/hyper/releases/download/0.8.1/hyper-0.8.1-amd64.deb -O /tmp/hyper.deb;
+dpkg -i /tmp/hyper.deb;
+
 # Place in filesystem
-cp -Rf skel/.config/* /etc/skel/.config/.;
+cp -Rf /tmp/skel/.config /etc/skel/.config;
 cp -Rf symphonyos/etc/* /etc/.;
 cp -Rf symphonyos/usr/* /usr/.;
 
