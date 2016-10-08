@@ -11,9 +11,9 @@ apt-get install x2go-keyring;
 # Install Debian packages
 apt-get update;
 apt-get -y install x2goserver x2goserver-xsession openbox tint2 nitrogen ruby ruby-sinatra ruby-gtk2 volumeicon-alsa pcmanfm lxterminal git lightdm;
-cd /tmp;
 
 # Install extras
+cd /tmp;
 apt-get -y install libwebkit-dev ruby-dev ;
 gem install webkit-gtk;
 gem install gtk-webkit-ruby;
@@ -27,11 +27,12 @@ git clone https://github.com/SymphonyOS/skel.git;
 dpkg -i /tmp/symphonyos/build/paper-icon-theme_1.3_all.deb;
 
 # Place in filesystem
-cp -Rf skel/.config /etc/skel/.config;
+cp -Rf skel/.config/* /etc/skel/.config/.;
 cp -Rf symphonyos/etc/* /etc/.;
 cp -Rf symphonyos/usr/* /usr/.;
 
-ln -s /usr/local/symphonyos/public/ico /usr/share/icons;
+# Create icons symlink
+ln -s /usr/share/icons /usr/local/symphonyos/public/ico;
 
 # Set up testuser with root's ssh key
 adduser --disabled-password --gecos "" testuser;
@@ -49,7 +50,7 @@ cp -f /etc/respin.conf.default /etc/respin.conf;
 respin dist;
 
 
-# Share LiveCD ISO
+# Share LiveCD ISO via www
 apt-get -y install apache2;
 mv /home/respin/respin/custom-live.iso /var/www/html/.;
 echo "<a href='/custom-live.iso'><h1>DOWNLOAD ISO</h1></a>" > /var/www/html/index.html;
