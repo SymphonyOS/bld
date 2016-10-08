@@ -45,6 +45,7 @@ ln -s /usr/share/icons /usr/local/symphony/mezzo/public/ico;
 # Set up testuser with root's ssh key
 adduser --disabled-password --gecos "" testuser;
 cp -Rf /etc/skel/.config/* /home/testuser/.config/.;
+cp -Rf /etc/skel/* /home/testuser/.;
 mkdir /home/testuser/.ssh;
 cp /root/.ssh/authorized_keys /home/testuser/.ssh/authorized_keys;
 chown -Rf testuser.testuser /home/testuser;
