@@ -32,7 +32,7 @@ cp -Rf symphonyos/etc/* /etc/.;
 cp -Rf symphonyos/usr/* /usr/.;
 
 # Create icons symlink
-ln -s /usr/share/icons /usr/local/symphonyos/public/ico;
+ln -s /usr/share/icons /usr/local/symphonyos/mezzo/public/ico;
 
 # Set up testuser with root's ssh key
 adduser --disabled-password --gecos "" testuser;
