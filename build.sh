@@ -32,9 +32,7 @@ dpkg -i /tmp/symphonyos/build/paper-icon-theme_1.3_all.deb;
 # Install Apps
 wget https://atom.io/download/deb -O /tmp/atom.deb;
 dpkg -i /tmp/atom.deb;
-Install hyper
-wget https://github.com/zeit/hyper/releases/download/0.8.1/hyper-0.8.1-amd64.deb -O /tmp/hyper.deb;
-dpkg -i /tmp/hyper.deb;
+
 
 # Place in filesystem
 cp -Rf /tmp/skel/.config /etc/skel/.config;
