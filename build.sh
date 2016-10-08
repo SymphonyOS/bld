@@ -23,6 +23,9 @@ gem install parseconfig;
 git clone https://github.com/SymphonyOS/symphonyos.git;
 git clone https://github.com/SymphonyOS/skel.git;
 
+# Install Icons
+dpkg -i /tmp/symphonyos/build/paper-icon-theme_1.3_all.deb;
+
 # Place in filesystem
 cp -Rf skel/.config /etc/skel/.config;
 cp -Rf symphonyos/etc/* /etc/.;
