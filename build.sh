@@ -45,6 +45,6 @@ respin dist;
 
 
 # Share LiveCD ISO
-apt-get install apache2;
+apt-get -y install apache2;
 mv /home/respin/respin/custom-live.iso /var/www/html/.;
 echo "<a href='/custom-live.iso'><h1>DOWNLOAD ISO</h1></a>" > /var/www/html/index.html;
