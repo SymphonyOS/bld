@@ -31,6 +31,8 @@ cp -Rf skel/.config /etc/skel/.config;
 cp -Rf symphonyos/etc/* /etc/.;
 cp -Rf symphonyos/usr/* /usr/.;
 
+ln -s /usr/local/symphonyos/public/ico /usr/share/icons;
+
 # Set up testuser with root's ssh key
 adduser --disabled-password --gecos "" testuser;
 cp -Rf /etc/skel /home/testuser;
