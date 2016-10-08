@@ -10,7 +10,7 @@ apt-get install x2go-keyring;
 
 # Install Debian packages
 apt-get update;
-apt-get -y install x2goserver x2goserver-xsession openbox tint2 nitrogen ruby ruby-sinatra ruby-gtk2 volumeicon-alsa pcmanfm lxterminal git lightdm gtk-theme-switch gtk2-engines-oxygen gtk3-engines-oxygen chromium leafpad openbox-menu;
+apt-get -y install x2goserver x2goserver-xsession openbox tint2 nitrogen ruby ruby-sinatra ruby-gtk2 volumeicon-alsa pcmanfm lxterminal git lightdm gtk-theme-switch gtk2-engines-oxygen gtk3-engines-oxygen chromium leafpad openbox-menu gksu;
 
 # Install extras
 cd /tmp;
