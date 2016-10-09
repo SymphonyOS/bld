@@ -10,7 +10,10 @@ apt-get install x2go-keyring;
 
 # Install Debian packages
 apt-get update;
-apt-get -y install x2goserver x2goserver-xsession openbox tint2 nitrogen ruby ruby-sinatra ruby-gtk2 libappindicator1 libdbusmenu-glib4 libdbusmenu-gtk4 libindicator7 libnotify-bin volumeicon-alsa pcmanfm lxappearance lxterminal git lightdm gtk-theme-switch gtk2-engines-oxygen gtk3-engines-oxygen chromium leafpad openbox-menu gksu;
+apt-get -y install x2goserver x2goserver-xsession openbox tint2 nitrogen ruby ruby-sinatra ruby-gtk2 libappindicator1 libdbusmenu-glib4 libdbusmenu-gtk4 libindicator7 libnotify-bin volumeicon-alsa git lightdm gtk-theme-switch gtk2-engines-oxygen gtk3-engines-oxygen openbox-menu gksu;
+
+# Install Apps
+apt-get -y install synaptic lxterminal leafpad chromium lxappearance pcmanfm;
 
 # Install extras
 cd /tmp;
@@ -28,11 +31,6 @@ git clone https://github.com/SymphonyOS/skel.git;
 
 # Install Icons
 dpkg -i /tmp/symphonyos/build/paper-icon-theme_1.3_all.deb;
-
-# Install Apps
-wget https://atom.io/download/deb -O /tmp/atom.deb;
-dpkg -i /tmp/atom.deb;
-
 
 # Place in filesystem
 cp -Rf /tmp/skel/.config /etc/skel/.config;
