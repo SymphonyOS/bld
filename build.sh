@@ -1,4 +1,5 @@
 #!/bin/sh
+
 export DEBIAN_FRONTEND=noninteractive;
 
 # Add x2go repository
